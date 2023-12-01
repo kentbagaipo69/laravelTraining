@@ -13,16 +13,16 @@
 </nav>
 
 {{-- sidebar --}}
-<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+<nav id="sidebarMenu" class="sidebar d-lg-block  text-white collapse" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);" data-simplebar>
 	<div class="sidebar-inner px-4 pt-3">
 		<div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
 			<div class="d-flex align-items-center">
 				<div class="avatar-lg me-4">
-					<img src="{{ asset('img/team/profile-picture-3.jpg') }}" class="card-img-top rounded-circle border-white"
+					<img src="{{ asset('img/team/admin.jpg') }}" class="card-img-top rounded-circle border-white"
 						alt="Bonnie Green">
 				</div>
 				<div class="d-block">
-					<h2 class="h5 mb-3">Hi, Jane</h2>
+					<h2 class="h5 mb-3">Hi, Kent</h2>
 					{{-- Authentication --}}
 					<form method="POST" action="{{ route('logout') }}">
 						@csrf
@@ -47,7 +47,7 @@
 					<span class="sidebar-icon">
 						<img src="{{ asset('img/brand/light.svg') }}" height="20" width="20" alt="Volt Logo">
 					</span>
-					<span class="mt-1 ms-1 sidebar-text">CMS</span>
+					<span class="mt-1 ms-1 sidebar-text" >CMS</span>
 				</a>
 			</li>
 			<li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
@@ -64,6 +64,22 @@
 						<i class="icon icon-xs me-2  bi bi-person-bounding-box"></i>
 					</span>
 					<span class="sidebar-text">Users Management</span>
+				</a>
+			</li>
+			<li class="nav-item {{ request()->routeIs('contacts.*') ? 'active' : '' }}">
+				<a href="{{ route('contacts.index') }}" class="nav-link">
+					<span class="sidebar-icon">
+						<i class="bi bi-person-lines-fill"></i>
+					</span>
+					<span class="sidebar-text">Contact Management</span>
+				</a>
+			</li>
+			<li class="nav-item {{ request()->routeIs('categories.*') ? 'active' : '' }}">
+				<a href="{{ route('categories.index') }}" class="nav-link">
+					<span class="sidebar-icon">
+						<i class="bi bi-card-list"></i>
+					</span>
+					<span class="sidebar-text">Categories</span>
 				</a>
 			</li>
 			<li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>

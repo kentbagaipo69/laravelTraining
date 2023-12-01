@@ -31,7 +31,7 @@
 		@include('layouts.partials.footer')
 
 	</main>
-
+	@stack('scripts')
 	{{-- Core --}}
 	<script src="{{ asset('vendor/@popperjs/popper.min.js') }}"></script>
 	<script src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
